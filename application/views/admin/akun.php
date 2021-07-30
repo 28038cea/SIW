@@ -89,6 +89,7 @@
             </div>
             <div class="modal-body">
                 <?php echo form_open_multipart('admin/akun'); ?>
+                <input type="hidden" name="id_akun" >
                 <div class="form-group">
                     <label for="email" class="control-label mb-1">Email</label>
                     <input id="email" name="email" type="text" class="form-control" aria-required="true" aria-invalid="false">

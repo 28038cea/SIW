@@ -48,7 +48,7 @@
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">
-                                                    @
+                                                    Lokasi
                                                 </div>
                                             </div>
                                             <input type="test" class="form-control" id="inlineFormInputGroup" placeholder="Nama Lokasi" value="<?php echo $lokasi['title'] ?>" disabled>
@@ -56,11 +56,11 @@
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend  border border-secondary">
                                                 <div class="input-group-text ">
-                                                    @
+                                                    Deskripsi
                                                 </div>
                                                     <div class="card" style="color:black" >
                                                     <?php echo $lokasi['deskripsi'] ?>
-                                                    </div>
+                                                    </div> 
                                             </div>
                                             
                                         </div>
@@ -82,7 +82,10 @@
                                             <div class="col-md-3">
                                                 <img src="<?= base_url('media/images/gambar_lokasi/' . $row['gambar'])  ?>" alt="">
                                             </div>
-                                        <?php } ?>
+                                            <div class="col-md-3">
+                                                <a href="<?= site_url('admin/delete_gambar/' . md5($row['id_gambar'])) ?>">Hapus</a>
+                                            </div>
+                                            <?php } ?>
                                     </div>
                                 </div>
                             </div>

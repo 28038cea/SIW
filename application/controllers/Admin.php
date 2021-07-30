@@ -65,6 +65,7 @@ class Admin extends CI_Controller
                 $this->M_all->save_update_akun($_POST);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun berhasil diubah.</div>');
             } else {
+                // print_r($_FILES);die;
                 $this->M_all->save_akun($_POST);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun berhasil ditambahakan.</div>');
             }
@@ -265,8 +266,19 @@ class Admin extends CI_Controller
                 echo $this->upload->display_errors();
             }
         }
-        redirect('admin/detail_lokasi');
+        redirect('admin/detail_lokasi/' . $_POST['id_lokasi']);
 
     }
 
+
+    public function delete_gambar($id_gambar)
+    {
+        $file=$this->db->get_where('tb_gambar', ['md5(id_gambar)' => $id_gambar])->row_array();
+        // print_r($file);die;
+        
+        $where = array('md5(id_gambar)' => $id_gambar);
+        $this->M_all->delete_gambar($where, 'tb_gambar');
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">gambar berhasil dihapus.</div>');
+        redirect('admin/detail_lokasi/' . $file['id_lokasi']);
+    }
 }

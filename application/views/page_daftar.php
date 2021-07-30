@@ -30,7 +30,7 @@
                 </div>
                 <div class="login-form">
                     <form class="user" method="POST" action="<?= base_url('masuk/daftar'); ?>">
-                        <div class="form-group">
+                        <div class="form-group"> 
                             <label>Email</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="Email">
                             <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
