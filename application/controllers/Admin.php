@@ -167,6 +167,20 @@ class Admin extends CI_Controller
         
     }
 
+    // public function detail_lokasi($id = 0)
+    // {
+    //     $data['title'] = 'Detail Lokasi';
+    //     $data['bab'] = "Lokasi";
+    //     $data['sub'] = "Detail Lokasi";
+    //     $data['lokasi'] = $this->M_all->get_data_lokasibyid($id);
+    //     $data['gambar'] = $this->M_all->get_gambar_lokasi($id);
+    //     $this->load->view('templates/admin_header', $data);
+    //     $this->load->view('templates/admin_menu', $data);
+    //     $this->load->view('templates/admin_bar', $data);
+    //     $this->load->view('admin/detail_lokasi', $data);
+    //     $this->load->view('templates/admin_footer');
+    // }
+
     public function detail_lokasi($id = 0)
     {
         $data['title'] = 'Detail Lokasi';
@@ -174,11 +188,7 @@ class Admin extends CI_Controller
         $data['sub'] = "Detail Lokasi";
         $data['lokasi'] = $this->M_all->get_data_lokasibyid($id);
         $data['gambar'] = $this->M_all->get_gambar_lokasi($id);
-        $this->load->view('templates/admin_header', $data);
-        $this->load->view('templates/admin_menu', $data);
-        $this->load->view('templates/admin_bar', $data);
-        $this->load->view('admin/detail_lokasi', $data);
-        $this->load->view('templates/admin_footer');
+        $this->load->view('admin/detail_peta',  $data);
     }
     
     public function edit_lokasi($id = 0)
